@@ -1,0 +1,10 @@
+# transfer-neg.model — [ERROR] утгуудыг ~-ээр тэмдэглэсэн (нэг мөрөнд хамгийн ихдээ нэг сөрөг утга).
+From:      Valid, ~Frozen, ~Missing
+To:        Valid, ~Missing, ~SameAsFrom
+Amount:    Normal, EqualsBalance, ~Zero, ~OverBalance, ~OverBalanceAfterFX, ~OverLimit
+Currency:  Same, Different
+DailyUsed: None, Partial, ~Exhausted
+
+# A2-ын [IF] хязгаарлалтууд ~ хэрэглэсэн ч хэрэгтэй хэвээр (README-г үз).
+IF [Amount] = "OverBalanceAfterFX" THEN [Currency] = "Different";
+IF [From] = "Missing" THEN [Amount] IN {"Normal", "Zero"} AND [DailyUsed] = "None";

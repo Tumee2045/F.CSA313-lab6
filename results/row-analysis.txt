@@ -1,0 +1,45 @@
+== results/transfer-nc.txt ==
+  rows: 19
+  happy path rows (0 errors): 0
+  rows with 1 error(s): 3
+  rows with 2 error(s): 7
+  rows with 3 error(s): 8
+  rows with 4 error(s): 1
+  max errors in one row: 4
+  impossible rows (violate A2 IF constraints): 6
+    мөр 2: From=Missing + Amount=EqualsBalance; From=Missing + DailyUsed=Exhausted
+    мөр 5: From=Missing + Amount=OverBalance; From=Missing + DailyUsed=Partial
+    мөр 9: OverBalanceAfterFX + Currency=Same; From=Missing + Amount=OverBalanceAfterFX; From=Missing + DailyUsed=Partial
+    мөр 11: From=Missing + Amount=OverLimit; From=Missing + DailyUsed=Partial
+    мөр 14: OverBalanceAfterFX + Currency=Same
+    мөр 17: From=Missing + DailyUsed=Exhausted
+
+== results/transfer.txt ==
+  rows: 20
+  happy path rows (0 errors): 1
+  rows with 0 error(s): 1
+  rows with 1 error(s): 2
+  rows with 2 error(s): 11
+  rows with 3 error(s): 5
+  rows with 4 error(s): 1
+  max errors in one row: 4
+  impossible rows (violate A2 IF constraints): 0
+
+== results/transfer-neg.txt ==
+  rows: 24
+  happy path rows (0 errors): 5
+  rows with 0 error(s): 5
+  rows with 1 error(s): 19
+  max errors in one row: 1
+  impossible rows (violate A2 IF constraints): 0
+
+== results/transfer-neg-nc.txt ==
+  rows: 25
+  happy path rows (0 errors): 5
+  rows with 0 error(s): 5
+  rows with 1 error(s): 20
+  max errors in one row: 1
+  impossible rows (violate A2 IF constraints): 2
+    мөр 6: OverBalanceAfterFX + Currency=Same
+    мөр 18: From=Missing + Amount=EqualsBalance; From=Missing + DailyUsed=Partial
+

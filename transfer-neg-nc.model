@@ -1,0 +1,7 @@
+# transfer-neg-nc.model — (нэмэлт туршилт) ~ тэмдэглэгээтэй, гэхдээ [IF] хязгаарлалтГҮЙ.
+# Зорилго: ~ хэрэглэхэд A2-ын хязгаарлалт хэрэгтэй хэвээр эсэхийг тоогоор шалгах.
+From:      Valid, ~Frozen, ~Missing
+To:        Valid, ~Missing, ~SameAsFrom
+Amount:    Normal, EqualsBalance, ~Zero, ~OverBalance, ~OverBalanceAfterFX, ~OverLimit
+Currency:  Same, Different
+DailyUsed: None, Partial, ~Exhausted
