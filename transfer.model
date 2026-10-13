@@ -1,0 +1,13 @@
+# transfer.model — Хэсэг A-гийн сонголт, утгууд + A2-ын [IF] хязгаарлалтууд.
+From:      Valid, Frozen, Missing
+To:        Valid, Missing, SameAsFrom
+Amount:    Normal, EqualsBalance, Zero, OverBalance, OverBalanceAfterFX, OverLimit
+Currency:  Same, Different
+DailyUsed: None, Partial, Exhausted
+
+# [IF FX]: "зөвхөн хөрвүүлсний дараа үлдэгдлээс хэтрэх" нь валют өөр үед л боломжтой.
+IF [Amount] = "OverBalanceAfterFX" THEN [Currency] = "Different";
+
+# [IF FromExists]: байхгүй дансанд үлдэгдэл ч, өдрийн лимит ч байхгүй тул
+# үлдэгдэл/лимиттэй харьцуулсан утгууд тодорхойгүй (боломжгүй хослол).
+IF [From] = "Missing" THEN [Amount] IN {"Normal", "Zero"} AND [DailyUsed] = "None";

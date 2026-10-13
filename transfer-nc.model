@@ -1,0 +1,6 @@
+# transfer-nc.model — Хэсэг A-гийн сонголт, утгууд. Хязгаарлалт БАЙХГҮЙ.
+From:      Valid, Frozen, Missing
+To:        Valid, Missing, SameAsFrom
+Amount:    Normal, EqualsBalance, Zero, OverBalance, OverBalanceAfterFX, OverLimit
+Currency:  Same, Different
+DailyUsed: None, Partial, Exhausted
